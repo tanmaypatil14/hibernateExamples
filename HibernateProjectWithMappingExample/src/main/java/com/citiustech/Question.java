@@ -17,6 +17,7 @@ public class Question {
 	private long questionId;
 	@Column(nullable = false)
 	private String question;
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "answerId")
 	private Answer answer;

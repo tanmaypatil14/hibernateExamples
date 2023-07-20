@@ -4,14 +4,19 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-		<property name="connection.url">jdbc:sqlserver://localhost;databaseName=Test;instanceName=SQLEXPRESS2019</property>
+		<property name="connection.url">jdbc:sqlserver://localhost;databaseName=hibernatePractice;instanceName=SQLEXPRESS2019</property>
 		<property name="connection.username">sa</property>
 		<property name="connection.password">password_123</property>
 		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
-		<mapping class="com.citiustech.Question" />
+		
+	    <mapping class="com.citiustech.Question" />
 		<mapping class="com.citiustech.Answer" />
+		<mapping class="com.citiustech.oneToMany.Instructor"/>
+		<mapping class="com.citiustech.oneToMany.Course"/>
+		<mapping class="com.citiustech.ManyToMany.Employee"/>
+		<mapping class="com.citiustech.ManyToMany.Project"/>
 	</session-factory>
 </hibernate-configuration>
