@@ -36,6 +36,10 @@ public class App {
 		session.save(question2);
 
 		transaction.commit();
+		
+		Question question = (Question) session.get(Question.class, 2L);
+		System.out.println(question);
+		
 		session.close();
 		factory.close();
 		System.out.println("Done........");
